@@ -16,6 +16,7 @@ Bundle 'gmarik/vundle'
 "
 " original repos on GitHub
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'ciaranm/detectindent'
 Bundle 'Lokaltog/vim-distinguished'
@@ -37,13 +38,13 @@ let g:syntastic_check_on_open=1
 " non-GitHub repos
 " Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'wincent/Command-T'
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 " These are the tweaks I apply to YCM's config, you don't need them but they might help.
 "  YCM gives you popups and splits by default that some people might not
 " like, so these should tidy it up a bit for you.
-" let g:ycm_add_preview_to_completeopt=0
-" let g:ycm_confirm_extra_conf=0
-" set completeopt-=preview
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
 Bundle 'marijnh/tern_for_vim'
 " Git repos on your local machine (i.e. when working on your own plugin)
 " Bundle 'file:///Users/gmarik/path/to/plugin'
@@ -76,7 +77,7 @@ endif
 set number
 :set shiftwidth=4 softtabstop=4 expandtab
 " autocmd vimenter * NERDTree
-autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
+" autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <leader>r :NERDTreeFind<cr>
@@ -101,3 +102,6 @@ let g:EasyGrepMode=2
 let g:EasyGrepCommand=0
 let g:EasyGrepRecursive=1
 let g:EasyGrepIgnoreCase=1
+map <leader>r :NERDTreeFind<cr>
+
+
